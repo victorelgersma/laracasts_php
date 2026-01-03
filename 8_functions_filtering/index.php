@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -15,7 +16,8 @@
     </head>
     <body>
 
-        <?php $books = [
+        <?php
+        $books = [
             [
                 "name" => "Do Androids Dream of Electric Sheep",
                 "author" => "Philip K. Dick",
@@ -34,17 +36,36 @@
                 "releaseYear" => 2011,
                 "purchaseUrl" => "http://example.com",
             ],
-        ]; ?>
+        ];
+
+        function filterByAuthor($books, $chosenAuthor)
+        {
+            $filteredBooks = [];
+
+            foreach ($books as $book) {
+                if ($book["author"] === $chosenAuthor) {
+                    $filteredBooks[] = $book;
+                }
+            }
+            return $filteredBooks;
+        }
+        ?>
 
         <ul>
-            <?php foreach ($books as $book): ?>
-            <!--  https://www.php.net/manual/en/control-structures.alternative-syntax.php -->
-            <li>
-                <a href="<?= $book["purchaseUrl"] ?>">
-                <?= $book["name"] ?>
-                (<?= $book["releaseYear"] ?>)
-                </a>
-            </li>
+            <?php foreach (
+                filterByAuthor($books, "Philip K. Dick")
+                as $book
+            ): ?>
+                <!--  https://www.php.net/manual/en/control-structures.alternative-syntax.php -->
+                    <li>
+                        <a href="<?= $book["purchaseUrl"] ?>"> <?= $book[
+    "name"
+] ?>
+                        (<?= $book["releaseYear"] ?>) - By <?= $book[
+    "author"
+] ?>
+                        </a>
+                    </li>
             <?php endforeach; ?>
         </ul>
     </body>
