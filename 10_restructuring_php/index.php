@@ -1,4 +1,5 @@
 <?php
+
 $books = [
     [
         "name" => "Do Androids Dream of Electric Sheep",
@@ -23,39 +24,5 @@ $books = [
 $filteredBooks = array_filter($books, function ($book) {
     return $book["author"] === "Andy Weir";
 });
-?>
 
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <title>Demo</title>
-    <style>
-        body {
-            display: grid;
-            place-content: center;
-            height: 100vh;
-            font-family: sans-serif;
-            margin: 0;
-        }
-    </style>
-</head>
-
-<body>
-    <ul>
-        <?php foreach ($filteredBooks as $item): ?>
-            <li>
-                <a href="<?= $item["purchaseUrl"] ?>"> <?= $item[
-                      "name"
-                  ] ?>
-                    (<?= $item["releaseYear"] ?>) - By <?= $item[
-                          "author"
-                      ] ?>
-                </a>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-</body>
-
-</html>
+require 'index.view.php';
