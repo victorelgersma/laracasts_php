@@ -81,14 +81,14 @@
 
         <header class="bg-white shadow-sm">
             <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-                <h1 class="text-3xl font-bold tracking-tight text-gray-900">About</h1>
+                <h1 class="text-3xl font-bold tracking-tight text-gray-900">Contact</h1>
             </div>
         </header>
 
         <main>
             <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
                 <div class="px-4 py-6 sm:px-0">
-<p class="px-4"> You are now on the about page</p>
+                    <p class="text-gray-400">Hello, welcome to the homepage. This menu now uses the native HTML Popover API combined with CSS Anchor Positioning.</p>
                 </div>
             </div>
         </main>
